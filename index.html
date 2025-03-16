@@ -17,11 +17,11 @@
     <img id="sticker" src="Soly.jpg" alt="Sticker">
     <script>
         const canvas = document.getElementById("gameCanvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
         const ctx = canvas.getContext("2d");
         
-        let bird = { x: 50, y: 150, radius: 10, gravity: 0.3, lift: -7, velocity: 0 };
+        let bird = { x: 100, y: 150, radius: 10, gravity: 0.3, lift: -7, velocity: 0 }; // Changed x to 100
         let pipes = [];
         let frame = 0;
         let score = 0;
@@ -29,7 +29,7 @@ canvas.height = window.innerHeight;
         
         document.addEventListener("keydown", jump);
         document.addEventListener("click", jump);
-document.addEventListener("touchstart", jump);
+        document.addEventListener("touchstart", jump);
         
         function jump() {
             if (!gameOver) bird.velocity = bird.lift;
@@ -88,7 +88,7 @@ document.addEventListener("touchstart", jump);
         function endGame() {
             gameOver = true;
             document.getElementById("sticker").style.display = "block";
-document.getElementById("retryButton").style.display = "block";
+            document.getElementById("retryButton").style.display = "block";
         }
         
         function gameLoop() {
@@ -99,7 +99,7 @@ document.getElementById("retryButton").style.display = "block";
         
         gameLoop();
     </script>
-<button id='retryButton' style='display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px; cursor: pointer;'>Try Again</button>
+    <button id='retryButton' style='display: none; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); padding: 10px 20px; font-size: 16px; cursor: pointer;'>Try Again</button>
     <script>
         document.getElementById("retryButton").addEventListener("click", function() {
             location.reload();
